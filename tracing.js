@@ -24,7 +24,7 @@ console.log("opentelemetry version: 0.2")
 
 const SERVICE_NAME = process.env.SERVICE_NAME || "STUDIUM";
 const SERVICE_VERSION = "0.1.0";
-const SAMPLER_RATIO = parseInt(process.env.SAMPLER_RATIO) || 1;
+const SAMPLER_RATIO = parseFloat(process.env.SAMPLER_RATIO) || 1;
 const NODE_ENV = process.env.NODE_ENV || "production";
 const ZIPKIN_ENDPOINT = process.env.ZIPKIN_ENDPOINT;
 
