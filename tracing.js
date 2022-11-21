@@ -1,9 +1,9 @@
 /* tracing.js */
 
 const opentelemetry = require("@opentelemetry/sdk-node");
-// const {
-//   getNodeAutoInstrumentations,
-// } = require("@opentelemetry/auto-instrumentations-node");
+const {
+  getNodeAutoInstrumentations,
+} = require("@opentelemetry/auto-instrumentations-node");
 const { ZipkinExporter } = require("@opentelemetry/exporter-zipkin");
 const {
   ConsoleSpanExporter,
@@ -56,7 +56,7 @@ const sdk = new opentelemetry.NodeSDK({
       // optional - collection of custom headers to be sent with each request, empty by default
       headers: {},
     })),*/
-  // instrumentations: [getNodeAutoInstrumentations()],
+  instrumentations: [getNodeAutoInstrumentations()],
   sampler: NODE_ENV === "production"
       ? new ParentBasedSampler({
           root: new TraceIdRatioBasedSampler(SAMPLER_RATIO),
