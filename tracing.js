@@ -31,7 +31,9 @@ const ZIPKIN_ENDPOINT = process.env.ZIPKIN_ENDPOINT;
 console.log(SERVICE_NAME, SAMPLER_RATIO, NODE_ENV, ZIPKIN_ENDPOINT);
 
 const zipkinOptions = {
-  headers: {},
+  headers: {
+    "api-key": process.env.TOKEN
+  },
   url: ZIPKIN_ENDPOINT
 }
 
